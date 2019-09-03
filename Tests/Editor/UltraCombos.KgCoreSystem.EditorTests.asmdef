@@ -1,0 +1,18 @@
+{
+    "name": "UltraCombos.KgCoreSystem.EditorTests",
+    "references": [
+        "UltraCombos.KgCoreSystem.RuntimeTests"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

@@ -1,0 +1,16 @@
+{
+    "name": "UltraCombos.KgCoreSystem.Editor",
+    "references": [
+        "UltraCombos.KgCoreSystem.Runtime"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
