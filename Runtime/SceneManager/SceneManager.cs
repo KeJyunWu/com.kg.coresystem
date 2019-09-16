@@ -7,7 +7,6 @@ namespace KG.Core
 {
     public class SceneManager : MonoBehaviour
     {
-
         private static SceneManager m_instance;
         public static SceneManager instance
         {
@@ -20,9 +19,9 @@ namespace KG.Core
         AsyncOperation m_asyncOperation;
         float m_currentProgress;
 
-        public void ChangeScene(string _sceneName)
+        public void ChangeScene(string _sceneName = null)
         {
-            if (m_bSceneLoading)
+            if (m_bSceneLoading || _sceneName == null)
                 return;
 
             m_bSceneLoading = true;
