@@ -5,14 +5,8 @@ using UnityEngine.SceneManagement;
 
 namespace KG.Core
 {
-    public class SceneManager : MonoBehaviour
+    public class SceneTransitions : MonoBehaviour
     {
-        private static SceneManager m_instance;
-        public static SceneManager instance
-        {
-            get { return m_instance; }
-        }
-
         public System.Action OnLoadSceneFinishCallBack;
 
         bool m_bSceneLoading = false;
@@ -41,12 +35,6 @@ namespace KG.Core
         {
             m_bSceneLoading = false;
             m_currentProgress = 0;
-        }
-
-        void Awake()
-        {
-            m_instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
 
         void Update()
