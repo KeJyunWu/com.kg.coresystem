@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 public class PackageTool
 {
     [MenuItem("Package/Update KGCoreSystem Package")]
@@ -9,3 +10,4 @@ public class PackageTool
 		AssetDatabase.ExportPackage("Assets/KGCoreSystem", "KGCoreSystem.unitypackage", ExportPackageOptions.Recurse);
     }
 }
+#endif

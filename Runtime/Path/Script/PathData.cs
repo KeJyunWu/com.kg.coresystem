@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [ExecuteInEditMode]
 public class PathData : MonoBehaviour {
@@ -67,7 +70,9 @@ public class PathData : MonoBehaviour {
                 for (var i=0;i< m_point.Count;i++)
                 {
                     Vector3 y = m_point[i];
+#if UNITY_EDITOR
                     Handles.Label(m_point[i],"Point : " +i.ToString());
+#endif
                     Gizmos.DrawLine(m_point[i] + Vector3.right* m_crossLength, m_point[i] - Vector3.right* m_crossLength);
                     Gizmos.DrawLine(m_point[i] + Vector3.up * m_crossLength, m_point[i] - Vector3.up * m_crossLength);
                     Gizmos.DrawLine(m_point[i] + Vector3.forward * m_crossLength, m_point[i] - Vector3.forward * m_crossLength);

@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor ;
 using UnityEditor.Callbacks;
+#endif
 
 using System.IO;
 using System.Collections;
 
 
-
+#if UNITY_EDITOR
 public class MyAssetModificationProcessor : UnityEditor.AssetModificationProcessor
 {
-    
-	[MenuItem("Reporter/Create")]
-	public static void CreateReporter()
+
+    [MenuItem("Reporter/Create")]
+
+    public static void CreateReporter()
 	{
 		GameObject reporterObj = new GameObject();
 		reporterObj.name = "Reporter";
@@ -52,8 +56,10 @@ public class MyAssetModificationProcessor : UnityEditor.AssetModificationProcess
 		reporter.images.reporterScrollerSkin = (GUISkin)AssetDatabase.LoadAssetAtPath("Assets/Reporter/Images/reporterScrollerSkin.guiskin", typeof(GUISkin));
 
 	}
-	[InitializeOnLoad]
-	public class BuildInfo
+
+    [InitializeOnLoad]
+
+    public class BuildInfo
 	{
 		static BuildInfo ()
 	    {
@@ -80,3 +86,4 @@ public class MyAssetModificationProcessor : UnityEditor.AssetModificationProcess
 	    }
 	}
 }
+#endif

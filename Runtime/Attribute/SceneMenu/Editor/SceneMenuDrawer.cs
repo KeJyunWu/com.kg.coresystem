@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using System.Collections.Generic;
 
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(SceneMenuAttribute))]
 public class SceneMenuDrawer : PropertyDrawer
 {
@@ -45,3 +46,4 @@ public class SceneMenuDrawer : PropertyDrawer
         }
     }
 }
+#endif
