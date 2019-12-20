@@ -10,6 +10,11 @@ namespace KG.Core
         public System.Action OnLoadSceneFinishCallBack;
 
         bool m_bSceneLoading = false;
+        public bool IsSceneLoading
+        {
+            get { return m_bSceneLoading; }
+        }
+
         AsyncOperation m_asyncOperation;
         float m_currentProgress;
 
