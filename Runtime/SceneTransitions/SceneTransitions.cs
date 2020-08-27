@@ -29,7 +29,7 @@ namespace KG.Core
 
         IEnumerator LoadSceneAsync(string _sceneName)
         {
-            m_asyncOperation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(_sceneName);
+            m_asyncOperation = SceneManager.LoadSceneAsync(_sceneName);
             yield return m_asyncOperation;
             LoadSceneFinish();
             if (OnLoadSceneFinishCallBack != null)
