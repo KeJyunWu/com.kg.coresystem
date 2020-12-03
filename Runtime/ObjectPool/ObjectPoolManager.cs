@@ -12,7 +12,16 @@ public class PoolSetting
 
 public enum PoolProduct
 {
-    Default
+    Product1,
+    Product2,
+    Product3,
+    Product4,
+    Product5,
+    Product6,
+    Product7,
+    Product8,
+    Product9,
+    Product10
 }
 
 public class ObjectPoolManager : MonoBehaviour {
