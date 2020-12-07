@@ -29,8 +29,8 @@ public class Texture3DCombiner : MonoBehaviour
             try
             {
                 m_result = new RenderTexture[2];
-                m_result[READ] = CommonFunction.CreateRT(m_textures[0].width, m_textures[0].height, 0, m_textures[0].volumeDepth, RenderTextureFormat.ARGBFloat);
-                m_result[WRITE] = CommonFunction.CreateRT(m_textures[0].width, m_textures[0].height, 0, m_textures[0].volumeDepth, RenderTextureFormat.ARGBFloat);
+                m_result[READ] = CommonFunction.CreateRT(m_textures[0].width, m_textures[0].height, 0, m_textures[0].volumeDepth, RenderTextureFormat.ARGBFloat, FilterMode.Point);
+                m_result[WRITE] = CommonFunction.CreateRT(m_textures[0].width, m_textures[0].height, 0, m_textures[0].volumeDepth, RenderTextureFormat.ARGBFloat, FilterMode.Point);
             }
             catch { }
         }
@@ -44,8 +44,8 @@ public class Texture3DCombiner : MonoBehaviour
                         m_result[i].Release();
                 }
 
-                m_result[READ] = CommonFunction.CreateRT(m_textures[0].width, m_textures[0].height, 0, m_textures[0].volumeDepth, RenderTextureFormat.ARGBFloat);
-                m_result[WRITE] = CommonFunction.CreateRT(m_textures[0].width, m_textures[0].height, 0, m_textures[0].volumeDepth, RenderTextureFormat.ARGBFloat);
+                m_result[READ] = CommonFunction.CreateRT(m_textures[0].width, m_textures[0].height, 0, m_textures[0].volumeDepth, RenderTextureFormat.ARGBFloat, FilterMode.Point);
+                m_result[WRITE] = CommonFunction.CreateRT(m_textures[0].width, m_textures[0].height, 0, m_textures[0].volumeDepth, RenderTextureFormat.ARGBFloat, FilterMode.Point);
             }
         }
     }
