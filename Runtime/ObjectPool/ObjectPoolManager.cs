@@ -34,6 +34,10 @@ public class ObjectPoolManager : MonoBehaviour {
 
     [SerializeField]
     List<PoolSetting> m_poolSetting = new List<PoolSetting>();
+
+    [SerializeField]
+    GameObject m_rootParent;
+    
     List<ObjectPool> m_Pools = new List<ObjectPool>();
     Dictionary<PoolProduct, ObjectPool> m_poolDictionary = new Dictionary<PoolProduct, ObjectPool>();
 
@@ -64,6 +68,9 @@ public class ObjectPoolManager : MonoBehaviour {
     void Init()
     {
         m_pivot = new GameObject("Pool");
+        if (m_rootParent != null)
+            m_pivot.transform.parent = m_rootParent.transform;
+
         for (var i=0;i< m_poolSetting.Count;i++)
         {
             PoolSetting _s = m_poolSetting[i];
