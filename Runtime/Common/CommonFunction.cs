@@ -56,7 +56,6 @@ public class CommonFunction : MonoBehaviour
         }
         File.WriteAllBytes(_fullPath + _name + ".png", _bytes);
      }
-
        
     public static Texture SaveRenderTextureToPNG(RenderTexture _RT, string _assetPath, string _name)
     {
@@ -95,11 +94,26 @@ public class CommonFunction : MonoBehaviour
             return;
 
         if (!Directory.Exists(_path))
-        {
             Directory.CreateDirectory(_path);
-        }
 
         AssetDatabase.CreateAsset(_asset, _path + _name);
+    }
+
+    public static Texture2D Screenshot(int _resWidth, int _resHeight, Camera _camera, TextureFormat _format = TextureFormat.RGBAFloat)
+    {
+        RenderTexture rt = RenderTexture.GetTemporary(_resWidth, _resHeight, 24);
+        _camera.targetTexture = rt;
+
+        Texture2D _texture = new Texture2D(_resWidth, _resHeight, _format, false);
+        _camera.Render();
+        RenderTexture.active = rt;
+        _texture.ReadPixels(new Rect(0, 0, _resWidth, _resHeight), 0, 0);
+        _camera.targetTexture = null;
+        RenderTexture.active = null;
+        _texture.Apply();
+
+        RenderTexture.ReleaseTemporary(rt);
+        return _texture;
     }
 #endif
 }
