@@ -15,7 +15,7 @@ public class BasicPoolObjectBehaviour : MonoBehaviour, IPoolObject
         return m_product;
     }
 
-    public void Init(PoolProduct _product)
+    public void ProductInit(PoolProduct _product)
     {
         m_product = _product;
         m_initEvent?.Invoke();

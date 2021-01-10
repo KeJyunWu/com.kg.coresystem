@@ -29,12 +29,14 @@ public class ObjectPool
 
         GameObject _obj = m_ObjectPool_Queue.Dequeue() as GameObject;
         _obj.GetComponent<IPoolObject>().ReuseBehaviour();
+        _obj.transform.SetParent(null);
         return _obj;
     }
 
     public void ObjectRecover(GameObject _Object)
     {
         _Object.GetComponent<IPoolObject>().RecoverBehaviour();
+        _Object.transform.SetParent(m_parent);
         m_ObjectPool_Queue.Enqueue(_Object);
     }
 
@@ -49,7 +51,7 @@ public class ObjectPool
             GameObject _obj = ObjFactory.CreatObjByPrefab(m_NeedGenerateObj[_index]) as GameObject;
             _obj.transform.SetParent(m_parent);
             _obj.transform.localPosition = new Vector3(0, 0, 0);
-            _obj.GetComponent<IPoolObject>().Init(m_product);
+            _obj.GetComponent<IPoolObject>().ProductInit(m_product);
             ObjectRecover(_obj);
         }
     }
