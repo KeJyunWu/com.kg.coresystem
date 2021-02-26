@@ -6,8 +6,8 @@ using UnityEngine;
 public class PoolSetting
 {
     public PoolProduct m_poolProduct;
-    public List<Object> m_product = new List<Object>();
     public int m_count;
+    public List<Object> m_product = new List<Object>();
 }
 
 public enum PoolProduct
