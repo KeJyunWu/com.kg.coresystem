@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using Sirenix.OdinInspector;
 
 [System.Serializable]
 public class PoolSetting
 {
+    [HorizontalGroup("Group 1"), LabelWidth(150), HideLabel]
     public PoolProduct m_poolProduct;
+    [HorizontalGroup("Group 1"), LabelWidth(150), HideLabel]
+    public string m_description = "Default";
+    [HorizontalGroup("Group 2"), LabelWidth(150), HideLabel]
     public int m_count;
+    [HorizontalGroup("Group 2"), LabelWidth(150), HideLabel]
     public List<Object> m_product = new List<Object>();
 }
 
+[EnumPaging]
 public enum PoolProduct
 {
     Product1,
@@ -21,7 +29,17 @@ public enum PoolProduct
     Product7,
     Product8,
     Product9,
-    Product10
+    Product10,
+    Product11,
+    Product12,
+    Product13,
+    Product14,
+    Product15,
+    Product16,
+    Product17,
+    Product18,
+    Product19,
+    Product20,
 }
 
 public class ObjectPoolManager : MonoBehaviour {
@@ -33,10 +51,10 @@ public class ObjectPoolManager : MonoBehaviour {
     }
 
     [SerializeField]
-    List<PoolSetting> m_poolSetting = new List<PoolSetting>();
+    GameObject m_rootParent;
 
     [SerializeField]
-    GameObject m_rootParent;
+    List<PoolSetting> m_poolSetting = new List<PoolSetting>();
     
     List<ObjectPool> m_Pools = new List<ObjectPool>();
     Dictionary<PoolProduct, ObjectPool> m_poolDictionary = new Dictionary<PoolProduct, ObjectPool>();
@@ -53,6 +71,15 @@ public class ObjectPoolManager : MonoBehaviour {
     {
         ObjectPool _p = m_poolDictionary[_poolProduct];
         _p.ObjectRecover(_object);
+    }
+
+    public string GetPorductDescription(PoolProduct _p)
+    {
+        var _v = from _source in m_poolSetting
+                 where _source.m_poolProduct == _p
+                 select _source;
+
+        return _v == null || _v.ToList().Count == 0 ? "Null" : _v.ToList()[0].m_description;
     }
 
     void Awake()
