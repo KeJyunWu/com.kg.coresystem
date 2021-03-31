@@ -9,6 +9,16 @@ using UnityEditor;
 
 public class CommonFunction : MonoBehaviour
 {
+    public static Vector3 RandomPointInsideBox(Vector3 _center, Vector3 _size)
+    {
+        return _center +
+            new Vector3(
+                Random.Range(-_size.x/2, _size.x/2),
+                 Random.Range(-_size.y/2, _size.y/2),
+                  Random.Range(-_size.z/2, _size.z/2)
+            ); ;
+    }
+
     public static Vector4 QuaternionToVector4(Quaternion _rotation)
     {
         return new Vector4(_rotation.x, _rotation.y, _rotation.z, _rotation.w);
