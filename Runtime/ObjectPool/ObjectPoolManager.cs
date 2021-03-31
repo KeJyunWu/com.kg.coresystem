@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -85,12 +85,8 @@ public class ObjectPoolManager : MonoBehaviour {
     void Awake()
     {
         m_instance = this;
-    }
-
-    void Start()
-    {
-        Init();
-    }
+		Init();
+	}
 
     void Init()
     {
