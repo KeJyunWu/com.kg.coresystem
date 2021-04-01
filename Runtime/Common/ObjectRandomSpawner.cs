@@ -16,6 +16,7 @@ public class ObjectRandomSpawner : MonoBehaviour
         {
             GameObject _obj = ObjectPoolManager.instance.ObjectReuse(m_product);
             _obj.transform.position = CommonFunction.RandomPointInsideBox(m_center, m_size);
+            _obj.transform.parent = this.transform;
         }
     }
 
