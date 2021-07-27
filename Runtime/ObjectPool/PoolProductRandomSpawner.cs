@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectRandomSpawner : MonoBehaviour
+public class PoolProductRandomSpawner : MonoBehaviour
 {
     public Vector3 m_center;
     public Vector3 m_size;
