@@ -1,26 +1,24 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class FPSDisplayer : MonoBehaviour
 {
-    public int m_size = 5;
+	public bool m_hide = false;
+	public int m_size = 5;
     public Color m_color = Color.white;
-
     float deltaTime = 0.0f;
-
-    bool m_enableFPS = false;
 
     void Update()
     {
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
 
         if (Input.GetKeyDown(KeyCode.F))
-            m_enableFPS = !m_enableFPS;
+            m_hide = !m_hide;
     }
 
     void OnGUI()
     {
-        if (m_enableFPS)
+        if (!m_hide)
         {
             int w = Screen.width, h = Screen.height;
 
