@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 public class BasicPoolObjectBehaviour : MonoBehaviour, IPoolObject
 {
+    [SerializeField, Sirenix.OdinInspector.ReadOnly]
     PoolProduct m_product;
     public UnityEvent m_initEvent;
     public UnityEvent m_recoverEvent;
