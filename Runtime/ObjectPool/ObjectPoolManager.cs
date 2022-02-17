@@ -61,6 +61,12 @@ public class ObjectPoolManager : MonoBehaviour {
 
     GameObject m_pivot;
 
+    public ObjectPool GetPool(PoolProduct _poolProduct)
+    {
+        ObjectPool _p = m_poolDictionary[_poolProduct];
+        return _p;
+    }
+
     public GameObject ObjectReuse(PoolProduct _poolProduct)
     {
         ObjectPool _p = m_poolDictionary[_poolProduct];

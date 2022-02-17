@@ -14,6 +14,11 @@ public class ObjectPool
     Transform m_parent;
     PoolProduct m_product;
 
+    public Queue GetQueue()
+    {
+        return m_ObjectPool_Queue;
+    }
+
     public ObjectPool(Transform _parent, List<Object> _needGenerateObj, int _count, PoolProduct _product)
     {
         m_parent = _parent;
