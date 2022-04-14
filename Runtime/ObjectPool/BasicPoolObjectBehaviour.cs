@@ -43,6 +43,12 @@ public class BasicPoolObjectBehaviour : MonoBehaviour, IPoolObject
 	public IEnumerator AutoRecover()
 	{
 		yield return new WaitForSeconds( m_life );
-		ObjectPoolManager.instance.ObjectRecover( m_product, gameObject);
-	}
+        RecoverSelf();
+
+    }
+
+    public void RecoverSelf()
+    {
+        ObjectPoolManager.instance.ObjectRecover(m_product, gameObject);
+    }
 }
