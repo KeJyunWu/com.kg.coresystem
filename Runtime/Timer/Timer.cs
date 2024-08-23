@@ -30,13 +30,9 @@ public class Timer  {
     }
 
 
-    public void Setup(Action<Timer> _OnTimerComplete, float _duration, Action _OnTimerEachSecondCallBack = null , Action<Timer> _OnHandlerCallback = null )
+    public void Setup(float _duration, Action<Timer> _OnTimerComplete, Action<Timer> _OnHandlerCallback = null )
     {
         m_duration = _duration;
-
-        if(_OnTimerEachSecondCallBack!=null)
-            OnTimerEachSecondCallBack += _OnTimerEachSecondCallBack;
-
         OnTimerComplete += _OnTimerComplete;
         OnTimerCompleteHandlerCallback += _OnHandlerCallback;
     }

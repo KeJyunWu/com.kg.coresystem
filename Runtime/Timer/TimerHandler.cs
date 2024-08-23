@@ -13,17 +13,17 @@ public class TimerHandler : MonoBehaviour {
 
     List<Timer> m_timers = new List<Timer>();
 
-    public Timer NewTimer(Action<Timer> _callBack,float _duration , Action _OnTimerEachSecondCallBack = null)
+    public Timer CreateTimer(float _duration, Action<Timer> _OnCompletedCallBack)
     {
         Timer _timer = new Timer();
-        _timer.Setup(_callBack, _duration, _OnTimerEachSecondCallBack,TimerFinish);
+        _timer.Setup(_duration, _OnCompletedCallBack, KillTimer);
         _timer.Begin();
         m_timers.Add(_timer);
 
         return _timer;
     }
 
-    void TimerFinish(Timer _time)
+    void KillTimer(Timer _time)
     {
         if (m_timers.Contains(_time))
         {
