@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
-using UnityEngine; // Unity 基本引用
+using UnityEngine;
 
-public class ApplicationQuit : MonoBehaviour
+public class ForceApplicationQuit : MonoBehaviour
 {
 
 #if !UNITY_EDITOR
