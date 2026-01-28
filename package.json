@@ -1,10 +1,9 @@
 {
-    "name": "com.ultracombos.kgcoresystem",
-    "displayName": "KGCoreSystem",
-    "version": "1.0.0",
-    "unity": "2018.3",
-    "description": "KG Core System.",
-    "keywords": [],
-    "category": "",
-    "dependencies": { }
+  "name": "com.ultracombos.kgcoresystem",
+  "displayName": "KG CoreSystem",
+  "version": "1.0.0",
+  "unity": "2018.3",
+  "description": "KG Core System.",
+  "keywords": [],
+  "category": ""
 }
